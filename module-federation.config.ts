@@ -1,7 +1,7 @@
 import { createModuleFederationConfig } from '@module-federation/rsbuild-plugin';
 
 export default createModuleFederationConfig({
-  name: 'home',
+  name: process.env.NAME,
   filename: "remoteEntry.js",
   exposes: {
     '.': './src/App.tsx',
