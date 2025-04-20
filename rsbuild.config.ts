@@ -9,7 +9,7 @@ export default defineConfig({
     pluginModuleFederation(moduleFederationConfig)
   ],
   output: {
-    assetPrefix: process.env.PATH,
+    assetPrefix: ' https://animeflv-clone-home.vercel.app/',
   },
   server: {
     port: process.env.PORT as unknown as number,
