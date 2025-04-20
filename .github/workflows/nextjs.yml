@@ -47,6 +47,9 @@ jobs:
 
       - name: PNPM set registry
         run: npm config set @matidiaz000:registry=https://npm.pkg.github.com/
+
+      - name: PNPM set auth token
+        run: npm config set //npm.pkg.github.com/:_authToken=${{ secrets.GITHUB_TOKEN }}
         
       - name: Setup Pages
         uses: actions/configure-pages@v5
