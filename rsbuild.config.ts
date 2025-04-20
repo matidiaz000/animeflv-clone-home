@@ -8,6 +8,9 @@ export default defineConfig({
     pluginReact(),
     pluginModuleFederation(moduleFederationConfig)
   ],
+  output: {
+    assetPrefix: './'
+  },    
   server: {
     port: 3001,
     headers: {
