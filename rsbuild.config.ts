@@ -9,10 +9,10 @@ export default defineConfig({
     pluginModuleFederation(moduleFederationConfig)
   ],
   output: {
-    assetPrefix: process.env.PATH || '.',
+    assetPrefix: 'https://animeflv-clone-home.vercel.app/',
   },
   server: {
-    port: process.env.PORT as unknown as number,
+    port: 3001,
     headers: {
       'Access-Control-Allow-Headers': 'X-Requested-With, Content-Type, Authorization',
       'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, PATCH, OPTIONS',
