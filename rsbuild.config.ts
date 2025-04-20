@@ -9,10 +9,10 @@ export default defineConfig({
     pluginModuleFederation(moduleFederationConfig)
   ],
   output: {
-    assetPrefix: './'
-  },    
+    assetPrefix: process.env.PATH,
+  },
   server: {
-    port: 3001,
+    port: process.env.PORT as unknown as number,
     headers: {
       'Access-Control-Allow-Headers': 'X-Requested-With, Content-Type, Authorization',
       'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, PATCH, OPTIONS',
