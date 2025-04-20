@@ -9,7 +9,7 @@ export default defineConfig({
     pluginModuleFederation(moduleFederationConfig)
   ],
   output: {
-    assetPrefix: import.meta.env.PATH || '.',
+    assetPrefix: process.env.PATH || '.',
   },
   server: {
     port: process.env.PORT as unknown as number,

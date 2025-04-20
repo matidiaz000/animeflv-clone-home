@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "build": "rsbuild build",
+    "build:prod": "rsbuild build --env-mode production",
     "check": "biome check --write",
     "dev": "rsbuild dev --open",
     "format": "biome format --write",
