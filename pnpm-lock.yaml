@@ -48,6 +48,9 @@ importers:
       graphql:
         specifier: ^16.10.0
         version: 16.10.0
+      lazy-load-list:
+        specifier: ^1.2.4
+        version: 1.2.4
       typescript:
         specifier: ^5.8.2
         version: 5.8.3
@@ -865,6 +868,9 @@ packages:
   koa@2.16.1:
     resolution: {integrity: sha512-umfX9d3iuSxTQP4pnzLOz0HKnPg0FaUUIKcye2lOiz3KPu1Y3M3xlz76dISdFPQs37P9eJz1wUpcTS6KDPn9fA==}
     engines: {node: ^4.8.4 || ^6.10.1 || ^7.10.1 || >= 8.1.4}
+
+  lazy-load-list@1.2.4:
+    resolution: {integrity: sha512-G6Dqs674D+j9f+L+8KWdDsgy9kh/6FmJczDMYJ1776jnK9biUFTG+Bu7TU6drcLYxVC2l41nyNi+dtryyxIx3w==}
 
   lodash.clonedeepwith@4.5.0:
     resolution: {integrity: sha512-QRBRSxhbtsX1nc0baxSkkK5WlVTTm/s48DSukcGcWZwIyI8Zz+lB+kFiELJXtzfH4Aj6kMWQ1VWW4U5uUDgZMA==}
@@ -1974,6 +1980,8 @@ snapshots:
       vary: 1.1.2
     transitivePeerDependencies:
       - supports-color
+
+  lazy-load-list@1.2.4: {}
 
   lodash.clonedeepwith@4.5.0: {}
 

@@ -1,29 +1,50 @@
-# Rsbuild project
+TYPE list FILTERS bySometime
 
-## Setup
+img
+title
+category
+description
+tags
+seasons [ { id, chapters[] } ]
+totalLenght
 
-Install the dependencies:
+TYPE item
 
-```bash
-pnpm install
-```
+title
+season {
+  id
+  chapterId
+  chapters {
+    lenght
+    next
+    current
+    prev
+  }
+}
+_________________________
 
-## Get started
+TRENDING NOW
+POPULAR THIS SEASON
+UPCOMING NEXT SEASON
+ALL TIME POPULAR
 
-Start the dev server:
+vertical[]
+(max lenght 6)
+__________________________
 
-```bash
-pnpm dev
-```
+VIEW MORE
 
-Build the app for production:
+vertical[]
+(pages lenght 20)
 
-```bash
-pnpm build
-```
+__________________________
 
-Preview the production build locally:
+MF_HOME
+/
 
-```bash
-pnpm preview
-```
+MF_ANIME
+/buscar/:category/:value
+
+MF_CHAPTER
+/anime/:id/:name/
+/anime/:id/:name/:chapter/
