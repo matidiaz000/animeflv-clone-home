@@ -1,11 +1,16 @@
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter } from "react-router-dom";
 import App from './App';
-import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
+import { ApolloClient, InMemoryCache, ApolloProvider, HttpLink } from '@apollo/client';
 import React from 'react';
 
-const client = new ApolloClient({
+const httpLink = new HttpLink({
   uri: 'https://graphql.anilist.co/',
+  credentials: "same-origin",
+});
+
+const client = new ApolloClient({
+  link: httpLink,
   cache: new InMemoryCache(),
 });
 

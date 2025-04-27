@@ -23,7 +23,7 @@ const CardList = ({ list, title, link }: IProps) => {
     <div className="container">
       <div className="d-flex justify-content-between align-items-center mb-4">
         <h2 className="h3">{title}</h2>
-        <Button variant="text" endIcon="" className="">Ver más</Button>
+        <Button variant="text" endIcon="" className="" href={link}>Ver más</Button>
       </div>
       <div className="row">
         {list?.data?.Page?.media?.map((item: any) => 
