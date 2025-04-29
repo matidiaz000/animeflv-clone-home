@@ -2,6 +2,7 @@ import { useState } from "react";
 
 const Hero = () => {
   const [searchText, setSearchText] = useState("");
+
   return (
     <div className="bg-dark py-5">
       <div className="container text-center text-white align-items-center pb-5">

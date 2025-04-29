@@ -1,5 +1,6 @@
 import { Button, Card } from "@matidiaz000/animeflv-clone-library";
 import { OperationVariables, QueryResult } from "@apollo/client";
+import { Format } from "../constant/format";
 
 interface IProps {
   list: QueryResult<any, OperationVariables>,
@@ -8,14 +9,6 @@ interface IProps {
 }
 
 const CardList = ({ list, title, link }: IProps) => {
-
-  const Format = (string: any) => {
-    if (string === 'MOVIE') return 'film'
-    if (string === 'TV') return 'anime'
-    if (string === 'OVA') return 'ova'
-    else return 'default'
-  }
-
   if (list.loading) return <p>Loading...</p>;
   if (list.error) return <p>Error : {list.error.message}</p>;
 
