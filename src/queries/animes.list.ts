@@ -12,6 +12,9 @@ export const GET_ANIME_LIST = gql`
       }
       media (sort: $sort, format_in: [OVA, TV, MOVIE], isAdult: false, season: $season, seasonYear: $seasonYear, status: $status) {
         id
+        trailer {
+          id
+        }
         coverImage {
           medium
           large

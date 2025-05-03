@@ -1,14 +1,14 @@
 import CardList from '../components/CardList';
-import Hero from '../components/Hero';
 import { useQuery } from '@apollo/client';
 import { GET_ANIME_LIST } from '../queries/animes.list';
 import { currentYear, getSeason } from '../utilities/seasons';
 import { urls } from '../constant/urls';
+import VideoHero from '../components/VideoHero';
 
 const Home = () => {
   const dateAdded = useQuery(GET_ANIME_LIST, {
     fetchPolicy: 'cache-and-network',
-    variables: { sort: [urls[0].sort], page: 1, perPage: 6 },
+    variables: { sort: [urls[0].sort], page: 1, perPage: 6, season: getSeason(), seasonYear: currentYear, status: 'RELEASING' },
   });
 
   const popularity = useQuery(GET_ANIME_LIST, {
@@ -18,7 +18,7 @@ const Home = () => {
 
   const upcoming = useQuery(GET_ANIME_LIST, {
     fetchPolicy: 'cache-and-network',
-    variables: { sort: [urls[2].sort], page: 1, perPage: 6, season: getSeason(true), seasonYear: currentYear, status: 'NOT_YET_RELEASED' },
+    variables: { sort: [urls[2].sort], page: 1, perPage: 6, season: getSeason(true), seasonYear: currentYear },
   });
 
   const score = useQuery(GET_ANIME_LIST, {
@@ -28,7 +28,7 @@ const Home = () => {
 
   return (
     <>
-      <Hero />
+      <VideoHero list={popularity}/>
       <div className="py-5">
         <div className="my-5">
           <CardList list={dateAdded} title={urls[0].text} link={`/buscar/${urls[0].url}`} />

@@ -9,6 +9,13 @@ interface IProps {
 }
 
 const CardList = ({ list, title, link }: IProps) => {
+
+  const setSubtitle = (item: any): string => {
+    if (item.episodes > 1) return `${item.episodes} episodios`
+    else if (item.episodes === 1 && item.duration) return `${item.duration}m`
+    else return "Próximamente"
+  }
+
   if (list.loading) return <p>Loading...</p>;
   if (list.error) return <p>Error : {list.error.message}</p>;
 
@@ -16,7 +23,7 @@ const CardList = ({ list, title, link }: IProps) => {
     <div className="container">
       <div className="d-flex justify-content-between align-items-center mb-4">
         <h2 className="h3">{title}</h2>
-        <Button variant="text" endIcon="" className="" href={link}>Ver más</Button>
+        <Button variant="text" endIcon="" size="sm" className="fw-bold text-uppercase border-0" href={link}>Ver más</Button>
       </div>
       <div className="row">
         {list?.data?.Page?.media?.map((item: any) => 
@@ -25,8 +32,8 @@ const CardList = ({ list, title, link }: IProps) => {
               img={item.coverImage?.large}
               category={Format(item.format)}
               title={item.title?.userPreferred}
-              subtitle={`${item.episodes} episodios`}
-              link={item.id}
+              subtitle={setSubtitle(item)}
+              link={`/anime/${item.id}`}
             />
           </div>
         )}
