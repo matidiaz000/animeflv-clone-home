@@ -16,6 +16,7 @@ export const GET_ANIME_LIST = gql`
           id
         }
         coverImage {
+          extraLarge
           medium
           large
           color

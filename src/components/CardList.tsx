@@ -20,14 +20,14 @@ const CardList = ({ list, title, link }: IProps) => {
   if (list.error) return <p>Error : {list.error.message}</p>;
 
   return (
-    <div className="container">
+    <div className="container-lg">
       <div className="d-flex justify-content-between align-items-center mb-4">
         <h2 className="h3">{title}</h2>
         <Button variant="text" endIcon="" size="sm" className="fw-bold text-uppercase border-0" href={link}>Ver más</Button>
       </div>
-      <div className="row">
+      <div className="row overflow-x-auto flex-nowrap flex-lg-wrap">
         {list?.data?.Page?.media?.map((item: any) => 
-          <div className="col-2" key={`${link}-${item.id}`}>
+          <div className="col-4 col-sm-3 col-lg-2" key={`${link}-${item.id}`}>
             <Card
               img={item.coverImage?.large}
               category={Format(item.format)}

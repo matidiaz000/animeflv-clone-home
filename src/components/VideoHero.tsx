@@ -8,7 +8,6 @@ interface IProps {
 }
 
 const VideoHero = ({ list }: IProps) => {
-
   if (list.loading) return <p>Loading...</p>;
   if (list.error) return <p>Error : {list.error.message}</p>;
 

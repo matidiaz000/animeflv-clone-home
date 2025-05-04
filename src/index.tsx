@@ -6,7 +6,7 @@ import React from 'react';
 
 const httpLink = new HttpLink({
   uri: 'https://graphql.anilist.co/',
-  credentials: "same-origin",
+  credentials: "include",
 });
 
 const client = new ApolloClient({

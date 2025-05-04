@@ -1,24 +1,40 @@
-import { useState } from "react";
+import { OperationVariables, QueryResult } from "@apollo/client";
+import { Format } from "../constant/format";
+import { Button } from "@matidiaz000/animeflv-clone-library";
 
-const Hero = () => {
-  const [searchText, setSearchText] = useState("");
+interface IProps {
+  list: QueryResult<any, OperationVariables>,
+}
+
+const Hero = ({ list }: IProps) => {
+  if (list.loading) return <p>Loading...</p>;
+  if (list.error) return <p>Error : {list.error.message}</p>;
+
+  const setSubtitle = (item: any): string => {
+    if (item.episodes > 1) return `${item.episodes} episodios`
+    else if (item.episodes === 1 && item.duration) return `${item.duration}m`
+    else return "Próximamente"
+  }
+
+  const randomNumber = Math.floor(
+    Math.random()*list.data?.Page?.media?.length
+  );
+
+  const media = list.data?.Page?.media[randomNumber];
 
   return (
-    <div className="bg-dark py-5">
-      <div className="container text-center text-white align-items-center pb-5">
-        <h1 className="mb-3">Tu fuente de <span className="text-primary">anime</span><br/> online gratis en HD</h1>
-        <p className="w-75 mx-auto mb-5">El mejor portal de anime online para latinoamérica, encuentra animes clásicos, animes del momento, animes más populares y mucho más, todo en animeflv, tu fuente de anime diaria.</p>
-        <div className="form-floating w-50  mx-auto">
-            <input
-              type="search"
-              className="form-control"
-              id="exampleDataList"
-              placeholder="Type to search..."
-              value={searchText}
-              onChange={({ target }) => setSearchText(target.value)}
-            />
-            <label htmlFor="exampleDataList">Search</label>
+    <div className="container">
+      <div className="border rounded position-relative overflow-hidden mx-3 mt-5">
+        <img className="mw-100 w-100" src={media.coverImage?.extraLarge} alt={media.title?.userPreferred} />
+        <div className="gradient-bottom position-absolute bottom-0 w-100 px-3 py-4">
+          <span className="badge bg-primary-200 text-primary-600 text-uppercase">{Format(media.format)}</span>
+          <h1 className="text-white mw-50 mt-3">{media?.title?.userPreferred}</h1>
+          <p className="text-white">{setSubtitle(media)}</p>
+          <div className="d-flex align-items-center mx-n2">
+            <Button variant="contained" className="mx-2 fw-semibold" color="white" startIcon="Play" href={`/anime/${media.id}/capitulo/0`}>Reproducir</Button>
+            <Button variant="outlined" className="mx-2 fw-semibold" color="white" startIcon="Info" href={`/anime/${media.id}`}>Más info</Button>
           </div>
+        </div>
       </div>
     </div>
   );

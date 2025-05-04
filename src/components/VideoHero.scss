@@ -26,11 +26,23 @@
   margin-left: -100%;
 }
 
-header.bg-dark {
-  position: absolute;
-  z-index: 2;
-  width: 100%;
-
+.gradient-top {
   background: #212529;
   background: linear-gradient(0deg,rgba(33, 37, 41, 0) 2%, rgba(33, 37, 41, 1) 100%) !important;
+}
+
+.gradient-bottom {
+  background: #212529;
+  background: linear-gradient(0deg,rgba(33, 37, 41, 1) 2%, rgba(33, 37, 41, 0) 100%) !important;
+}
+
+@media (min-width: 768px) {
+  header.bg-dark {
+    position: absolute;
+    z-index: 2;
+    width: 100%;
+
+    background: #212529;
+    background: linear-gradient(0deg,rgba(33, 37, 41, 0) 2%, rgba(33, 37, 41, 1) 100%) !important;
+  }
 }
