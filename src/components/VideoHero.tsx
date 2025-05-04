@@ -46,7 +46,7 @@ const VideoHero = ({ list }: IProps) => {
 
   return (
     <div className="position-relative">
-      <div className="bg-dark VideoHeroComponent ratio ratio-16x9">
+      <div className="bg-dark VideoHeroComponent ratio">
         <iframe
           width="560"
           height="315"
