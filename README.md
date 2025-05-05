@@ -1,50 +1,23 @@
-TYPE list FILTERS bySometime
+# AnimeFLV Clone Home
 
-img
-title
-category
-description
-tags
-seasons [ { id, chapters[] } ]
-totalLenght
+Contain of all the necessary for run the home page.
 
-TYPE item
+> [!WARNING]
+> This project is a clone of AnimeFLV official site and is develop purpose of demostration in my portfolio, is not a official project.
 
-title
-season {
-  id
-  chapterId
-  chapters {
-    lenght
-    next
-    current
-    prev
-  }
-}
-_________________________
+**Demo**: [https://animeflv-clone-host.vercel.app/](https://animeflv-clone-host.vercel.app/)
 
-TRENDING NOW
-POPULAR THIS SEASON
-UPCOMING NEXT SEASON
-ALL TIME POPULAR
+## Microfrontend
 
-vertical[]
-(max lenght 6)
-__________________________
+This project is develop with microfrontend methodology, for this reason the project itself has different interconnected modules.
 
-VIEW MORE
+- **Library** - [Github](https://github.com/matidiaz000/animeflv-clone-library/)
+- **Documentation** - [Github](https://github.com/matidiaz000/animeflv-clone-docs/) - [Demo](https://animeflv-clone-docs.vercel.app/)
+- **Configuration** - [Github](https://github.com/matidiaz000/animeflv-clone-host/) - [Demo](https://animeflv-clone-host.vercel.app/)
+- **Home** - [Github](https://github.com/matidiaz000/animeflv-clone-home/) - [Demo](https://animeflv-clone-home.vercel.app/)
+- **List** - [Github](https://github.com/matidiaz000/animeflv-clone-animes/) - [Demo](https://animeflv-clone-animes.vercel.app/)
+- **Description** - [Github](https://github.com/matidiaz000/animeflv-clone-chapter/) - [Demo](https://animeflv-clone-chapter.vercel.app/)
 
-vertical[]
-(pages lenght 20)
+## Description
 
-__________________________
-
-MF_HOME
-/
-
-MF_ANIME
-/buscar/:category/:value
-
-MF_CHAPTER
-/anime/:id/:name/
-/anime/:id/:name/:chapter/
+This project is to showcase my knowledge in Microfrontend, Clean Architecture, ci/cd & React + Rsbuild + SASS.
