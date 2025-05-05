@@ -1,5 +1,5 @@
 import { OperationVariables, QueryResult } from "@apollo/client";
-import { Format } from "../constant/format";
+import { Color, Format } from "../constant/format";
 import { Button } from "@matidiaz000/animeflv-clone-library";
 
 interface IProps {
@@ -27,7 +27,7 @@ const Hero = ({ list }: IProps) => {
       <div className="border rounded position-relative overflow-hidden mx-3 mt-5">
         <img className="mw-100 w-100" src={media.coverImage?.extraLarge} alt={media.title?.userPreferred} />
         <div className="gradient-bottom position-absolute bottom-0 w-100 px-3 py-4">
-          <span className="badge bg-primary-200 text-primary-600 text-uppercase">{Format(media.format)}</span>
+          <span className={`badge ${Color(media.format)} text-uppercase`}>{Format(media.format)}</span>
           <h1 className="text-white mw-50 mt-3">{media?.title?.userPreferred}</h1>
           <p className="text-white">{setSubtitle(media)}</p>
           <div className="d-flex align-items-center mx-n2">
