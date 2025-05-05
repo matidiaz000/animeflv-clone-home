@@ -3,17 +3,13 @@ import "./VideoHero.scss";
 import { Button } from "@matidiaz000/animeflv-clone-library";
 import { Format } from "../constant/format";
 import VideoHeroSkeleton from "../skeletons/VideoHero";
-import { useEffect, useState } from "react";
 
 interface IProps {
   list: QueryResult<any, OperationVariables>,
 }
 
 const VideoHero = ({ list }: IProps) => {
-  const randomNumber = Math.round(
-    Math.random() * 7
-  );
-  if (list.loading || !randomNumber) return <VideoHeroSkeleton />;
+  if (list.loading) return <VideoHeroSkeleton />;
   if (list.error) return <p>Error : {list.error.message}</p>;
 
   const setSubtitle = (item: any): string => {
@@ -21,6 +17,8 @@ const VideoHero = ({ list }: IProps) => {
     else if (item?.episodes === 1 && item?.duration) return `${item.duration}m`
     else return "Próximamente"
   }
+
+  const randomNumber = Math.round( Math.random() * 7 );
   
   const media = list.data?.Page?.media[randomNumber];
 
