@@ -2,13 +2,14 @@ import { OperationVariables, QueryResult } from "@apollo/client";
 import "./VideoHero.scss";
 import { Button } from "@matidiaz000/animeflv-clone-library";
 import { Format } from "../constant/format";
+import VideoHeroSkeleton from "../skeletons/VideoHero";
 
 interface IProps {
   list: QueryResult<any, OperationVariables>,
 }
 
 const VideoHero = ({ list }: IProps) => {
-  if (list.loading) return <p>Loading...</p>;
+  if (list.loading) return <VideoHeroSkeleton />;
   if (list.error) return <p>Error : {list.error.message}</p>;
 
   const setSubtitle = (item: any): string => {

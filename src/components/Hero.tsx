@@ -1,13 +1,14 @@
 import { OperationVariables, QueryResult } from "@apollo/client";
 import { Color, Format } from "../constant/format";
 import { Button } from "@matidiaz000/animeflv-clone-library";
+import HeroSkeleton from "../skeletons/Hero";
 
 interface IProps {
   list: QueryResult<any, OperationVariables>,
 }
 
 const Hero = ({ list }: IProps) => {
-  if (list.loading) return <p>Loading...</p>;
+  if (list.loading) return <HeroSkeleton />;
   if (list.error) return <p>Error : {list.error.message}</p>;
 
   const setSubtitle = (item: any): string => {

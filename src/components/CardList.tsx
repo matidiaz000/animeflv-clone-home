@@ -1,6 +1,7 @@
 import { Button, Card } from "@matidiaz000/animeflv-clone-library";
 import { OperationVariables, QueryResult } from "@apollo/client";
 import { Format } from "../constant/format";
+import CardListSkeleton from "../skeletons/CardList";
 
 interface IProps {
   list: QueryResult<any, OperationVariables>,
@@ -16,7 +17,7 @@ const CardList = ({ list, title, link }: IProps) => {
     else return "Próximamente"
   }
 
-  if (list.loading) return <p>Loading...</p>;
+  if (list.loading) return <CardListSkeleton />;
   if (list.error) return <p>Error : {list.error.message}</p>;
 
   return (
