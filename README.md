@@ -12,12 +12,14 @@ Contain of all the necessary for run the home page.
 This project is develop with microfrontend methodology, for this reason the project itself has different interconnected modules.
 
 - **Library** - [Github](https://github.com/matidiaz000/animeflv-clone-library/)
+NPM library create for sharing all UI structure of microfrontend achitecture.
 - **Documentation** - [Github](https://github.com/matidiaz000/animeflv-clone-docs/) - [Demo](https://animeflv-clone-docs.vercel.app/)
+Documentation of Anime FLV Clone Library
 - **Configuration** - [Github](https://github.com/matidiaz000/animeflv-clone-host/) - [Demo](https://animeflv-clone-host.vercel.app/)
+Is the Host or main project, store and share principal configurations in the three of microfrontend structure.
 - **Home** - [Github](https://github.com/matidiaz000/animeflv-clone-home/) - [Demo](https://animeflv-clone-home.vercel.app/)
-- **List** - [Github](https://github.com/matidiaz000/animeflv-clone-animes/) - [Demo](https://animeflv-clone-animes.vercel.app/)
-- **Description** - [Github](https://github.com/matidiaz000/animeflv-clone-chapter/) - [Demo](https://animeflv-clone-chapter.vercel.app/)
-
-## Description
-
-This project is to showcase my knowledge in Microfrontend, Clean Architecture, ci/cd & React + Rsbuild + SASS.
+Contain of all the necessary for run the home page.
+- **Animes** - [Github](https://github.com/matidiaz000/animeflv-clone-animes/) - [Demo](https://animeflv-clone-animes.vercel.app/)
+Contain of all the necessary for run the anime list page filter by categories.
+- **Chapter** - [Github](https://github.com/matidiaz000/animeflv-clone-chapter/) - [Demo](https://animeflv-clone-chapter.vercel.app/)
+Contain of all the necessary for run the anime description and chapter view pages.
